@@ -13752,7 +13752,7 @@ mKBhSc8YY0zQsKRnjDEmaFjSM8YYEzQs6RljjAka/w/U81DpTJT1vgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ol>
-<li>When the model is trained with a maximum depth of1, the model suffers from high bias, it is underfit.</li>
+<li>When the model is trained with a maximum depth of 1, the model suffers from high bias, it is underfit.</li>
 <li>When the model is trained with a maximum depth of 10, the model suffers from high variance, it is overfit.</li>
 </ol>
 <p>The visual cues for high bias are that the scores for training and validation are both low. The visual cues for high variance are that the training score is very high, but the validation score is medium to low. High training and validation scores with minimum delta between them is the goal.</p>
@@ -13819,7 +13819,7 @@ mKBhSc8YY0zQsKRnjDEmaFjSM8YYEzQs6RljjAka/w/U81DpTJT1vgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ol>
-<li>The grid search technique is just a way to evaluate how different hyperparameters preform within an algorithm. For our project here, we would create a table for how each decision tree depth (1, 2, 3, 4, etc.) did, by using their respective F1 scores. We then would pick the depth hyperparameter that did the best.</li>
+<li>The grid search technique is a way to evaluate how a specified parameter, within a given estimator, performs at different values. It helps to 'tune' the selected parameter to optimize the estimator's performance. For our project here, we would create a table for how each decision tree depth (1, 2, 3, 4, etc.) did, by using their respective F1 scores. We then would pick the depth parameter that did the best.</li>
 </ol>
 
 </div>
@@ -13849,8 +13849,18 @@ mKBhSc8YY0zQsKRnjDEmaFjSM8YYEzQs6RljjAka/w/U81DpTJT1vgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ol>
-<li>The k-fold cross-validation training technique is the method of creating 'k' groups of testing and training buckets. For instance we could split the training and testing data into four 'buckets' and rotate through which bucket will be used for testing.</li>
-<li>The benefit of this is that we don't 'lose' any of the data to the test group. All the data is used to train.</li>
+<li><p>The k-fold cross-validation training technique is the method of creating 'k' groups of testing and training buckets. For instance, we could split the data into four 'buckets' (A, B, C, and D) and rotate through which bucket will be used for testing. At the end of the four runs, because we have four buckets, we average all of the testing scores to achieve our model evaluation. This works as follows:</p>
+<ul>
+<li>Run 1 - Buckets A, B, and C are used to train the model and D is used to Test/Evaluate</li>
+<li>Run 2 - Buckets A, B, and D are used to train the model and C is used to Test/Evaluate</li>
+<li>Run 3 - Buckets A, c, and D are used to train the model and B is used to Test/Evaluate</li>
+<li><p>Run 4 - Buckets B, c, and D are used to train the model and A is used to Test/Evaluate</p>
+<p>At the end of the four runs the four evaluations are averaged together to give a final evaulation score.</p>
+</li>
+</ul>
+</li>
+<li><p>The benefit of this is that we don't 'lose' any of the data to the test group. All the data is used to train. Also, when using this method, a validation set is no longer needed, thus freeing up more data to train/test.</p>
+</li>
 </ol>
 
 </div>
